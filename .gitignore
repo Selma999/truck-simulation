@@ -42,8 +42,8 @@ venv.bak/
 Thumbs.db
 
 # Data files (optional - remove if you want to include data)
-data/trajectories/*.csv
-data/results/*.csv
+# data/trajectories/*.csv
+# data/results/*.csv
 
 # Logs
 *.log
