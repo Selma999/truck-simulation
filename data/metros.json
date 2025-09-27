@@ -1,0 +1,14 @@
+{
+  "metros": [
+    { "name": "New York", "state": "NY", "lat": 40.7128, "lon": -74.0060, "population": 20153634 },
+    { "name": "Los Angeles", "state": "CA", "lat": 34.0522, "lon": -118.2437, "population": 13214799 },
+    { "name": "Chicago", "state": "IL", "lat": 41.8781, "lon": -87.6298, "population": 9461105 },
+    { "name": "Dallas-Fort Worth", "state": "TX", "lat": 32.7767, "lon": -96.7970, "population": 7233323 },
+    { "name": "Houston", "state": "TX", "lat": 29.7604, "lon": -95.3698, "population": 6979617 },
+    { "name": "Washington DC", "state": "DC", "lat": 38.9072, "lon": -77.0369, "population": 6179964 },
+    { "name": "Miami", "state": "FL", "lat": 25.7617, "lon": -80.1918, "population": 6066387 },
+    { "name": "Philadelphia", "state": "PA", "lat": 39.9526, "lon": -75.1652, "population": 6038098 },
+    { "name": "Atlanta", "state": "GA", "lat": 33.7490, "lon": -84.3880, "population": 4980446 },
+    { "name": "Boston", "state": "MA", "lat": 42.3601, "lon": -71.0589, "population": 4886000 }
+  ]
+}
