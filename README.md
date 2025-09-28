@@ -86,7 +86,7 @@ simulation_task/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Selma999/truck-simulation.git
    cd simulation_task
    ```
 
