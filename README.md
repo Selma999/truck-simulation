@@ -13,11 +13,12 @@ This project simulates truck movements across the United States, analyzing:
 ## Key Features
 
 - **100 simulated truck trajectories** between 10 major US metro regions
-- **Real road routing** via OSRM API (not linear interpolation)
+- **Real road routing** via OSRM API with automatic fallback to linear interpolation
 - **Minute-resolution tracking** for precise analysis
-- **State-level geocoding** using Nominatim API
-- **Comprehensive visualizations**: histograms, scatter plots, speed analysis
-- **Export capabilities** for further analysis
+- **State-level geocoding** using Nominatim API (limited to 1000 points for performance)
+- **Comprehensive visualizations**: 6 different plots including histograms and scatter plots
+- **Data export** with CSV files for trajectories, speeds, and state analysis
+- **Quality validation** with correlation analysis and statistical checks
 
 ## Metro Regions
 
@@ -54,20 +55,24 @@ The simulation covers the 10 largest US metropolitan areas:
 simulation_task/
 ├── README.md                    # This file
 ├── requirements.txt            # Python dependencies
-├── docker-compose.yml          # OSRM deployment (optional)
 ├── data/
 │   ├── metros.json             # Metro region definitions
-│   └── trajectories/           # Generated simulation data
-│       ├── trajectory_summary.csv
-│       ├── state_minutes.csv
-│       └── per_minute_speeds.csv
+│   ├── trajectories/           # Generated simulation data
+│   │   ├── trajectory_summary.csv
+│   │   ├── state_minutes.csv
+│   │   └── per_minute_speeds.csv
+│   └── plots/                  # Visualization outputs
+│       ├── distance_histogram.png
+│       ├── duration_histogram.png
+│       ├── speed_histogram.png
+│       ├── state_minutes_histogram.png
+│       ├── distance_vs_duration.png
+│       └── combined_analysis.png
 ├── notebooks/
-│   ├── simulation.ipynb       # Main simulation notebook
-│   └── analysis.ipynb          # Data analysis notebook
+│   └── simulation.ipynb        # Main simulation and analysis notebook
 └── src/
-    ├── routing.py              # Linear interpolation (fallback)
-    ├── routing_osrm_api.py     # OSRM API implementation
-    └── routing_linear_fallback.py
+    ├── __init__.py
+    └── routing_osrm_api.py     # OSRM API implementation with fallback
 ```
 
 ## Quick Start
@@ -188,17 +193,24 @@ print("All packages installed successfully!")
 
 The simulation produces:
 
-### Visualizations
-1. **Distance Histogram** - Distribution of trip distances
-2. **Duration Histogram** - Distribution of trip durations  
-3. **Distance vs Duration Scatter Plot** - Correlation analysis
-4. **State Minutes Histogram** - Time spent per US state
-5. **Speed Histogram** - Per-minute speed distribution
+### Visualizations (PNG files in `data/plots/`)
+1. **`distance_histogram.png`** - Distribution of trip distances
+2. **`duration_histogram.png`** - Distribution of trip durations  
+3. **`distance_vs_duration.png`** - Correlation analysis scatter plot with trend line
+4. **`state_minutes_histogram.png`** - Time spent per US state
+5. **`speed_histogram.png`** - Per-minute speed distribution
+6. **`combined_analysis.png`** - All 4 main plots in one visualization
 
-### Data Exports
-- **trajectory_summary.csv** - High-level trajectory data
-- **state_minutes.csv** - State-level time analysis
-- **per_minute_speeds.csv** - Detailed speed measurements
+### Quality Analysis
+- **Correlation analysis** - Distance vs Duration correlation (typically r > 0.8)
+- **Statistical validation** - Realistic speed ranges (70-95 km/h)
+- **Data quality checks** - Outlier detection and validation
+- **Fallback monitoring** - OSRM vs Linear interpolation usage tracking
+
+### Data Exports (CSV files in `data/trajectories/`)
+- **`trajectory_summary.csv`** - High-level trajectory data (100 routes)
+- **`state_minutes.csv`** - State-level time analysis (minutes per state)
+- **`per_minute_speeds.csv`** - Detailed speed measurements (all minute segments)
 
 ## Configuration
 
