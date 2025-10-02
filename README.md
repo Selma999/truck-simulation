@@ -1,24 +1,25 @@
-# Truck Simulation with OSRM
+# Truck Simulation with Valhalla
 
-A comprehensive simulation of 100 trucks traveling between 10 major US metro regions using real road routes via OSRM API and state-level analysis through Nominatim geocoding.
+A comprehensive simulation of 100 trucks traveling between 10 major US metro regions using real road routes via Valhalla API and state-level analysis through spatial join with US states GeoJSON.
 
 ## Project Overview
 
 This project simulates truck movements across the United States, analyzing:
-- **Real road routes** using OSRM (Open Source Routing Machine) API
+- **Real road routes** using Valhalla routing engine (preferred) or OSRM API (fallback)
 - **Per-minute coordinates** for detailed trajectory analysis
-- **State-level time analysis** using Nominatim reverse geocoding
-- **Speed and distance distributions** with comprehensive visualizations
+- **State-level time analysis** using spatial join with US states GeoJSON
+- **Speed and distance distributions** with comprehensive interactive visualizations
 
 ## Key Features
 
 - **100 simulated truck trajectories** between 10 major US metro regions
-- **Real road routing** via OSRM API with automatic fallback to linear interpolation
+- **Real road routing** via Valhalla API (preferred) or OSRM API (fallback)
 - **Minute-resolution tracking** for precise analysis
-- **State-level geocoding** using Nominatim API (limited to 1000 points for performance)
-- **Comprehensive visualizations**: 6 different plots including histograms and scatter plots
+- **State-level analysis** using spatial join with US states GeoJSON (all segments processed)
+- **Interactive visualizations**: Plotly-based charts with hover tooltips and zoom functionality
 - **Data export** with CSV files for trajectories, speeds, and state analysis
 - **Quality validation** with correlation analysis and statistical checks
+- **Advanced spatial analysis** with nearest-neighbor fallback for boundary cases
 
 ## Metro Regions
 
@@ -39,15 +40,17 @@ The simulation covers the 10 largest US metropolitan areas:
 
 ### Core Technologies
 - **Python 3.10+** - Main programming language
-- **OSRM API** - Real road routing and navigation
-- **Nominatim API** - Reverse geocoding for state identification
+- **Valhalla API** - Modern routing engine (preferred)
+- **OSRM API** - Open source routing (fallback)
+- **GeoPandas** - Spatial data analysis and state assignment
+- **Plotly** - Interactive data visualization
 - **Pandas** - Data manipulation and analysis
-- **Matplotlib** - Data visualization
 - **NumPy** - Numerical computations
 
 ### APIs Used
-- **OSRM** (`https://router.project-osrm.org`) - Open source routing
-- **Nominatim** (`https://nominatim.openstreetmap.org`) - OpenStreetMap geocoding
+- **Valhalla** - Modern routing engine (primary)
+- **OSRM** (`https://router.project-osrm.org`) - Open source routing (fallback)
+- **US States GeoJSON** - Spatial boundaries for state assignment
 
 ## Project Structure
 
@@ -57,22 +60,26 @@ simulation_task/
 ├── requirements.txt            # Python dependencies
 ├── data/
 │   ├── metros.json             # Metro region definitions
+│   ├── us_states.geojson       # US states boundaries
 │   ├── trajectories/           # Generated simulation data
 │   │   ├── trajectory_summary.csv
-│   │   ├── state_minutes.csv
+│   │   ├── state_minutes_full.csv
+│   │   ├── per_minute_segments_with_state.csv
 │   │   └── per_minute_speeds.csv
-│   └── plots/                  # Visualization outputs
-│       ├── distance_histogram.png
-│       ├── duration_histogram.png
-│       ├── speed_histogram.png
-│       ├── state_minutes_histogram.png
-│       ├── distance_vs_duration.png
-│       └── combined_analysis.png
+│   └── plots/                  # Interactive visualization outputs
+│       ├── distance_histogram.html
+│       ├── duration_histogram.html
+│       ├── speed_histogram.html
+│       ├── speed_histogram_rolling5.html
+│       ├── state_minutes_histogram.html
+│       ├── distance_vs_duration.html
+│       ├── state_minutes_choropleth.html
+│       └── state_avg_speed_choropleth.html
 ├── notebooks/
 │   └── simulation.ipynb        # Main simulation and analysis notebook
 └── src/
     ├── __init__.py
-    └── routing_osrm_api.py     # OSRM API implementation with fallback
+    └── routing.py              # Valhalla/OSRM routing implementation
 ```
 
 ## Quick Start
@@ -80,7 +87,7 @@ simulation_task/
 ### Prerequisites
 - Python 3.10+
 - Virtual environment (recommended)
-- Internet connection (for OSRM and Nominatim APIs)
+- Internet connection (for Valhalla/OSRM APIs)
 
 ### Installation
 
@@ -114,6 +121,16 @@ pip install matplotlib>=3.4.0
 # API and networking
 pip install requests>=2.25.0
 
+# Spatial analysis
+pip install geopandas>=0.12.0
+pip install shapely>=2.0.0
+
+# Interactive visualizations
+pip install plotly>=5.0.0
+
+# Polyline decoding for Valhalla
+pip install polyline>=2.0.0
+
 # Jupyter environment
 pip install jupyter>=1.0.0
 pip install jupyterlab>=3.0.0
@@ -123,8 +140,11 @@ pip install jupyterlab>=3.0.0
 - **Python**: 3.10+
 - **NumPy**: 1.21.0+ (numerical computations)
 - **Pandas**: 1.3.0+ (data manipulation)
-- **Matplotlib**: 3.4.0+ (visualization)
-- **Requests**: 2.25.0+ (API calls for OSRM and Nominatim)
+- **GeoPandas**: 0.12.0+ (spatial analysis)
+- **Shapely**: 2.0.0+ (geometric operations)
+- **Plotly**: 5.0.0+ (interactive visualizations)
+- **Polyline**: 2.0.0+ (Valhalla geometry decoding)
+- **Requests**: 2.25.0+ (API calls for Valhalla/OSRM)
 - **Jupyter**: 1.0.0+ (notebook environment)
 
 ### Detailed Installation Instructions
@@ -193,13 +213,15 @@ print("All packages installed successfully!")
 
 The simulation produces:
 
-### Visualizations (PNG files in `data/plots/`)
-1. **`distance_histogram.png`** - Distribution of trip distances
-2. **`duration_histogram.png`** - Distribution of trip durations  
-3. **`distance_vs_duration.png`** - Correlation analysis scatter plot with trend line
-4. **`state_minutes_histogram.png`** - Time spent per US state
-5. **`speed_histogram.png`** - Per-minute speed distribution
-6. **`combined_analysis.png`** - All 4 main plots in one visualization
+### Interactive Visualizations (HTML files in `data/plots/`)
+1. **`distance_histogram.html`** - Distribution of trip distances (interactive)
+2. **`duration_histogram.html`** - Distribution of trip durations (interactive)
+3. **`distance_vs_duration.html`** - Correlation analysis scatter plot with hover tooltips
+4. **`state_minutes_histogram.html`** - Time spent per US state (interactive)
+5. **`speed_histogram.html`** - Per-minute speed distribution (interactive)
+6. **`speed_histogram_rolling5.html`** - 5-minute rolling mean speed distribution
+7. **`state_minutes_choropleth.html`** - Choropleth map of minutes per state
+8. **`state_avg_speed_choropleth.html`** - Choropleth map of average speed per state
 
 ### Quality Analysis
 - **Correlation analysis** - Distance vs Duration correlation (typically r > 0.8)
@@ -209,34 +231,44 @@ The simulation produces:
 
 ### Data Exports (CSV files in `data/trajectories/`)
 - **`trajectory_summary.csv`** - High-level trajectory data (100 routes)
-- **`state_minutes.csv`** - State-level time analysis (minutes per state)
+- **`state_minutes_full.csv`** - Per-truck state-level time analysis
+- **`per_minute_segments_with_state.csv`** - All minute segments with state assignments
 - **`per_minute_speeds.csv`** - Detailed speed measurements (all minute segments)
 
 ## Configuration
 
-### OSRM API Settings
+### Valhalla API Settings (Recommended)
+```python
+# Custom Valhalla server
+routing = TruckRouting(
+    valhalla_url="http://your-valhalla-server:8002",
+    router_type="valhalla"
+)
+```
+
+### OSRM API Settings (Fallback)
 ```python
 # Default OSRM endpoint
-osrm_url = "https://router.project-osrm.org"
-
-# For local OSRM deployment
-osrm_url = "http://localhost:5000"
+routing = TruckRouting(
+    osrm_url="https://router.project-osrm.org",
+    router_type="osrm"
+)
 ```
 
 ### Rate Limiting
+- **Valhalla API**: No rate limits
 - **OSRM API**: No rate limits (public service)
-- **Nominatim API**: 1 request/second (with User-Agent header)
 
-## Local OSRM Deployment (Optional)
+## Local Valhalla Deployment (Optional)
 
 For production use or offline analysis:
 
 ```bash
-# Start local OSRM server
-docker-compose up osrm-backend-small -d
+# Start local Valhalla server
+docker run -p 8002:8002 -v $(pwd)/valhalla:/data ghcr.io/valhalla/valhalla:latest
 
-# Use local OSRM in code
-routing = TruckRouting(osrm_url="http://localhost:5001")
+# Use local Valhalla in code
+routing = TruckRouting(valhalla_url="http://localhost:8002", router_type="valhalla")
 ```
 
 ## Sample Results
@@ -250,9 +282,9 @@ routing = TruckRouting(osrm_url="http://localhost:5001")
 - **State coverage**: All 50 US states
 
 ### Performance
-- **Generation time**: ~5-10 minutes for 100 trajectories
-- **API calls**: ~100 OSRM + ~1,000 Nominatim requests
-- **Data size**: ~2.5MB CSV files
+- **Generation time**: ~3-5 minutes for 100 trajectories (Valhalla)
+- **API calls**: ~100 Valhalla requests (no rate limiting)
+- **Data size**: ~3MB CSV files + interactive HTML visualizations
 
 ## Contributing
 
@@ -270,15 +302,15 @@ This project is open source. Please check the license file for details.
 
 ### Common Issues
 
-**OSRM API errors**
+**Valhalla API errors**
+- Check network connection to Valhalla server
+- Verify Valhalla endpoint availability
+- Use OSRM fallback if needed
+
+**OSRM API errors (fallback)**
 - Check internet connection
 - Verify API endpoint availability
 - Consider rate limiting
-
-**Nominatim 403 errors**
-- Ensure User-Agent header is set
-- Implement proper rate limiting (1 req/sec)
-- Use fallback geocoding if needed
 
 **Import errors**
 - Verify virtual environment is activated
@@ -293,9 +325,11 @@ For issues and questions, please open a GitHub issue with:
 
 ## References
 
+- [Valhalla Documentation](https://github.com/valhalla/valhalla)
 - [OSRM Documentation](http://project-osrm.org/)
-- [Nominatim Usage Policy](https://operations.osmfoundation.org/policies/nominatim/)
-- [OpenStreetMap](https://www.openstreetmap.org/)
+- [GeoPandas Documentation](https://geopandas.org/)
+- [Plotly Documentation](https://plotly.com/python/)
+- [US States GeoJSON](https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json)
 
 ---
 

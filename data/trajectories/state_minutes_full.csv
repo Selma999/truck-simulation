@@ -1,0 +1,798 @@
+trajectory_id,STATE_NAME,minutes
+0,Alabama,238
+0,Georgia,73
+0,Louisiana,104
+0,Mississippi,118
+0,Texas,153
+1,Alabama,213
+1,Georgia,27
+1,Louisiana,123
+1,Maryland,14
+1,Mississippi,108
+1,New Jersey,127
+1,New York,8
+1,Pennsylvania,149
+1,Tennessee,150
+1,Texas,86
+1,Virginia,418
+1,West Virginia,29
+2,Connecticut,95
+2,Massachusetts,78
+2,New Jersey,55
+2,New York,58
+2,Pennsylvania,30
+3,Georgia,73
+3,Maryland,10
+3,New Jersey,92
+3,New York,6
+3,North Carolina,115
+3,Pennsylvania,120
+3,South Carolina,82
+3,Virginia,286
+3,West Virginia,25
+4,Arizona,24
+4,California,149
+4,Colorado,567
+4,Illinois,138
+4,Iowa,218
+4,Nebraska,232
+4,Nevada,69
+4,Utah,296
+5,Illinois,25
+5,Indiana,124
+5,Ohio,151
+5,Pennsylvania,371
+6,Delaware,28
+6,Florida,219
+6,Georgia,45
+6,Maryland,153
+6,North Carolina,151
+6,Pennsylvania,71
+6,South Carolina,151
+6,Virginia,254
+7,Alabama,188
+7,Connecticut,203
+7,Georgia,26
+7,Louisiana,106
+7,Maryland,11
+7,Massachusetts,134
+7,Mississippi,98
+7,New Jersey,1
+7,New York,107
+7,Pennsylvania,201
+7,Tennessee,131
+7,Texas,74
+7,Virginia,367
+7,West Virginia,28
+8,Alabama,266
+8,Georgia,106
+8,Louisiana,152
+8,Mississippi,64
+8,Texas,109
+9,Arizona,25
+9,California,152
+9,Colorado,535
+9,Illinois,136
+9,Iowa,237
+9,Nebraska,247
+9,Nevada,71
+9,Utah,291
+10,Alabama,215
+10,Arizona,265
+10,Arkansas,215
+10,California,207
+10,Georgia,73
+10,Mississippi,80
+10,New Mexico,244
+10,Oklahoma,343
+10,Tennessee,37
+10,Texas,137
+11,Connecticut,161
+11,Georgia,64
+11,Maryland,9
+11,Massachusetts,106
+11,New Jersey,1
+11,New York,85
+11,North Carolina,101
+11,Pennsylvania,159
+11,South Carolina,72
+11,Virginia,253
+11,West Virginia,22
+12,Delaware,22
+12,District of Columbia,12
+12,Maryland,79
+12,Pennsylvania,32
+13,Alabama,238
+13,Georgia,73
+13,Louisiana,104
+13,Mississippi,118
+13,Texas,153
+14,Arkansas,132
+14,Connecticut,216
+14,Maryland,12
+14,Massachusetts,134
+14,New Jersey,1
+14,New York,110
+14,Pennsylvania,206
+14,Tennessee,262
+14,Texas,113
+14,Virginia,376
+14,West Virginia,26
+15,Arizona,20
+15,California,127
+15,Colorado,481
+15,Connecticut,222
+15,Illinois,122
+15,Indiana,130
+15,Iowa,185
+15,Massachusetts,147
+15,Nebraska,196
+15,Nevada,58
+15,New Jersey,1
+15,New York,117
+15,Ohio,182
+15,Pennsylvania,333
+15,Utah,251
+16,Alabama,213
+16,Georgia,27
+16,Louisiana,123
+16,Maryland,14
+16,Mississippi,108
+16,New Jersey,127
+16,New York,8
+16,Pennsylvania,149
+16,Tennessee,150
+16,Texas,86
+16,Virginia,418
+16,West Virginia,29
+17,Connecticut,168
+17,Georgia,67
+17,Maryland,9
+17,Massachusetts,103
+17,New Jersey,1
+17,New York,85
+17,North Carolina,100
+17,Pennsylvania,159
+17,South Carolina,73
+17,Virginia,249
+17,West Virginia,21
+18,Illinois,25
+18,Indiana,124
+18,New Jersey,125
+18,New York,7
+18,Ohio,154
+18,Pennsylvania,279
+19,District of Columbia,24
+19,Illinois,23
+19,Indiana,122
+19,Maryland,84
+19,Ohio,157
+19,Pennsylvania,218
+20,Arizona,333
+20,California,182
+20,New Mexico,82
+20,Texas,583
+21,Florida,323
+21,Georgia,254
+22,Alabama,188
+22,Connecticut,212
+22,Georgia,23
+22,Louisiana,108
+22,Maryland,12
+22,Massachusetts,130
+22,Mississippi,95
+22,New Jersey,1
+22,New York,107
+22,Pennsylvania,201
+22,Tennessee,132
+22,Texas,75
+22,Virginia,367
+22,West Virginia,26
+23,Arizona,20
+23,California,127
+23,Colorado,481
+23,Connecticut,222
+23,Illinois,122
+23,Indiana,130
+23,Iowa,185
+23,Massachusetts,147
+23,Nebraska,196
+23,Nevada,58
+23,New Jersey,1
+23,New York,117
+23,Ohio,182
+23,Pennsylvania,333
+23,Utah,251
+24,Connecticut,172
+24,Delaware,28
+24,Florida,175
+24,Georgia,35
+24,Maryland,122
+24,Massachusetts,143
+24,New Jersey,140
+24,New York,113
+24,North Carolina,120
+24,South Carolina,121
+24,Virginia,203
+25,District of Columbia,32
+25,Florida,245
+25,Georgia,53
+25,North Carolina,165
+25,South Carolina,169
+25,Virginia,265
+26,Florida,237
+26,Georgia,331
+26,Illinois,36
+26,Indiana,280
+26,Kentucky,189
+26,Tennessee,146
+27,Illinois,25
+27,Indiana,124
+27,Ohio,151
+27,Pennsylvania,371
+28,Arkansas,132
+28,Connecticut,208
+28,Maryland,11
+28,Massachusetts,137
+28,New Jersey,1
+28,New York,109
+28,Pennsylvania,206
+28,Tennessee,265
+28,Texas,113
+28,Virginia,376
+28,West Virginia,29
+29,Arizona,328
+29,California,186
+29,New Mexico,92
+29,Texas,574
+30,Delaware,28
+30,Florida,219
+30,Georgia,45
+30,Maryland,153
+30,North Carolina,151
+30,Pennsylvania,71
+30,South Carolina,151
+30,Virginia,254
+31,Delaware,40
+31,District of Columbia,37
+31,Florida,219
+31,Georgia,46
+31,Maryland,138
+31,North Carolina,147
+31,Pennsylvania,56
+31,South Carolina,151
+31,Virginia,236
+32,Arizona,353
+32,California,199
+32,New Mexico,98
+32,Texas,608
+33,Alabama,79
+33,Florida,475
+33,Louisiana,133
+33,Mississippi,269
+33,Texas,197
+34,Alabama,214
+34,Georgia,31
+34,Louisiana,121
+34,Maryland,13
+34,Mississippi,112
+34,Pennsylvania,205
+34,Tennessee,149
+34,Texas,85
+34,Virginia,420
+34,West Virginia,32
+35,Alabama,188
+35,Connecticut,203
+35,Georgia,26
+35,Louisiana,106
+35,Maryland,11
+35,Massachusetts,134
+35,Mississippi,98
+35,New Jersey,1
+35,New York,107
+35,Pennsylvania,201
+35,Tennessee,131
+35,Texas,74
+35,Virginia,367
+35,West Virginia,28
+36,New Jersey,58
+36,New York,5
+36,Pennsylvania,38
+37,Delaware,35
+37,District of Columbia,36
+37,Florida,216
+37,Georgia,46
+37,Maryland,137
+37,New Jersey,149
+37,New York,10
+37,North Carolina,145
+37,South Carolina,150
+37,Virginia,233
+38,Arizona,238
+38,California,185
+38,Illinois,162
+38,Indiana,153
+38,Missouri,311
+38,New Mexico,218
+38,Ohio,200
+38,Oklahoma,239
+38,Pennsylvania,470
+38,Texas,123
+38,West Virginia,15
+39,Alabama,79
+39,Florida,522
+39,Louisiana,202
+39,Mississippi,86
+39,Texas,146
+40,Alabama,215
+40,Georgia,30
+40,Louisiana,121
+40,Maryland,13
+40,Mississippi,111
+40,New Jersey,116
+40,New York,8
+40,Pennsylvania,152
+40,Tennessee,149
+40,Texas,85
+40,Virginia,419
+40,West Virginia,32
+41,Alabama,91
+41,Florida,482
+41,Louisiana,129
+41,Mississippi,275
+41,Texas,179
+42,Delaware,22
+42,District of Columbia,12
+42,Maryland,79
+42,Pennsylvania,32
+43,Arizona,25
+43,California,152
+43,Colorado,535
+43,Illinois,136
+43,Iowa,237
+43,Nebraska,247
+43,Nevada,71
+43,Utah,291
+44,Alabama,188
+44,Connecticut,212
+44,Georgia,23
+44,Louisiana,108
+44,Maryland,12
+44,Massachusetts,130
+44,Mississippi,95
+44,New Jersey,1
+44,New York,107
+44,Pennsylvania,201
+44,Tennessee,132
+44,Texas,75
+44,Virginia,367
+44,West Virginia,26
+45,Arkansas,153
+45,Maryland,13
+45,New Jersey,121
+45,New York,8
+45,Pennsylvania,159
+45,Tennessee,307
+45,Texas,132
+45,Virginia,437
+45,West Virginia,33
+46,Connecticut,107
+46,Delaware,18
+46,District of Columbia,10
+46,Maryland,66
+46,Massachusetts,89
+46,New Jersey,87
+46,New York,70
+47,Arkansas,153
+47,Maryland,14
+47,New Jersey,133
+47,New York,8
+47,Pennsylvania,155
+47,Tennessee,303
+47,Texas,131
+47,Virginia,435
+47,West Virginia,31
+48,Illinois,24
+48,Indiana,124
+48,New Jersey,148
+48,New York,6
+48,Ohio,161
+48,Pennsylvania,253
+49,Arizona,24
+49,California,149
+49,Colorado,567
+49,Illinois,138
+49,Iowa,218
+49,Nebraska,232
+49,Nevada,69
+49,Utah,296
+50,Alabama,243
+50,Georgia,75
+50,Louisiana,105
+50,Mississippi,117
+50,Texas,146
+51,Florida,237
+51,Georgia,331
+51,Illinois,36
+51,Indiana,280
+51,Kentucky,189
+51,Tennessee,146
+52,District of Columbia,24
+52,Illinois,26
+52,Indiana,125
+52,Maryland,82
+52,Ohio,152
+52,Pennsylvania,223
+53,District of Columbia,21
+53,Georgia,84
+53,North Carolina,198
+53,South Carolina,92
+53,Virginia,187
+54,Alabama,267
+54,Georgia,106
+54,Louisiana,151
+54,Mississippi,64
+54,Texas,109
+55,Connecticut,172
+55,Delaware,28
+55,Florida,175
+55,Georgia,35
+55,Maryland,122
+55,Massachusetts,143
+55,New Jersey,140
+55,New York,113
+55,North Carolina,120
+55,South Carolina,121
+55,Virginia,203
+56,Arkansas,153
+56,Maryland,14
+56,New Jersey,133
+56,New York,8
+56,Pennsylvania,155
+56,Tennessee,303
+56,Texas,131
+56,Virginia,435
+56,West Virginia,31
+57,Alabama,72
+57,Florida,529
+57,Louisiana,203
+57,Mississippi,86
+57,Texas,146
+58,Arkansas,153
+58,Maryland,14
+58,New Jersey,133
+58,New York,8
+58,Pennsylvania,155
+58,Tennessee,303
+58,Texas,131
+58,Virginia,435
+58,West Virginia,31
+59,Alabama,215
+59,Georgia,30
+59,Louisiana,121
+59,Maryland,13
+59,Mississippi,111
+59,New Jersey,116
+59,New York,8
+59,Pennsylvania,152
+59,Tennessee,149
+59,Texas,85
+59,Virginia,419
+59,West Virginia,32
+60,Georgia,73
+60,Maryland,10
+60,New Jersey,92
+60,New York,6
+60,North Carolina,115
+60,Pennsylvania,120
+60,South Carolina,82
+60,Virginia,286
+60,West Virginia,25
+61,Alabama,215
+61,Georgia,30
+61,Louisiana,121
+61,Maryland,13
+61,Mississippi,111
+61,New Jersey,116
+61,New York,8
+61,Pennsylvania,152
+61,Tennessee,149
+61,Texas,85
+61,Virginia,419
+61,West Virginia,32
+62,Arizona,23
+62,California,134
+62,Colorado,472
+62,Illinois,130
+62,Indiana,148
+62,Iowa,209
+62,Nebraska,217
+62,Nevada,62
+62,New Jersey,163
+62,New York,9
+62,Ohio,202
+62,Pennsylvania,362
+62,Utah,256
+63,Alabama,65
+63,Arizona,383
+63,California,215
+63,Florida,479
+63,Louisiana,183
+63,Mississippi,78
+63,New Mexico,107
+63,Texas,782
+64,New Jersey,58
+64,New York,5
+64,Pennsylvania,38
+65,Arkansas,159
+65,District of Columbia,19
+65,Tennessee,317
+65,Texas,136
+65,Virginia,520
+66,District of Columbia,32
+66,Florida,245
+66,Georgia,53
+66,North Carolina,165
+66,South Carolina,169
+66,Virginia,265
+67,Alabama,213
+67,Georgia,27
+67,Louisiana,123
+67,Maryland,14
+67,Mississippi,108
+67,New Jersey,127
+67,New York,8
+67,Pennsylvania,149
+67,Tennessee,150
+67,Texas,86
+67,Virginia,418
+67,West Virginia,29
+68,Arkansas,154
+68,Maryland,14
+68,Pennsylvania,214
+68,Tennessee,308
+68,Texas,132
+68,Virginia,439
+68,West Virginia,33
+69,Connecticut,175
+69,Delaware,28
+69,District of Columbia,30
+69,Florida,175
+69,Georgia,37
+69,Maryland,111
+69,Massachusetts,142
+69,New Jersey,142
+69,New York,105
+69,North Carolina,118
+69,South Carolina,121
+69,Virginia,188
+70,Arizona,244
+70,Arkansas,207
+70,California,193
+70,District of Columbia,24
+70,New Mexico,228
+70,Oklahoma,320
+70,Tennessee,340
+70,Texas,129
+70,Virginia,566
+71,Arizona,20
+71,California,123
+71,Colorado,433
+71,Connecticut,235
+71,Illinois,119
+71,Indiana,136
+71,Iowa,191
+71,Massachusetts,145
+71,Nebraska,199
+71,Nevada,57
+71,New Jersey,1
+71,New York,119
+71,Ohio,185
+71,Pennsylvania,375
+71,Utah,236
+72,Alabama,188
+72,Connecticut,203
+72,Georgia,26
+72,Louisiana,106
+72,Maryland,11
+72,Massachusetts,134
+72,Mississippi,98
+72,New Jersey,1
+72,New York,107
+72,Pennsylvania,201
+72,Tennessee,131
+72,Texas,74
+72,Virginia,367
+72,West Virginia,28
+73,District of Columbia,20
+73,Georgia,81
+73,North Carolina,196
+73,South Carolina,90
+73,Virginia,196
+74,Arizona,24
+74,California,149
+74,Colorado,567
+74,Illinois,138
+74,Iowa,218
+74,Nebraska,232
+74,Nevada,69
+74,Utah,296
+75,Alabama,219
+75,District of Columbia,18
+75,Georgia,31
+75,Louisiana,124
+75,Mississippi,114
+75,Tennessee,153
+75,Texas,87
+75,Virginia,494
+76,Alabama,213
+76,Georgia,27
+76,Louisiana,123
+76,Maryland,14
+76,Mississippi,108
+76,New Jersey,127
+76,New York,8
+76,Pennsylvania,149
+76,Tennessee,150
+76,Texas,86
+76,Virginia,418
+76,West Virginia,29
+77,Alabama,79
+77,Florida,475
+77,Louisiana,133
+77,Mississippi,269
+77,Texas,197
+78,Georgia,73
+78,Maryland,10
+78,New Jersey,92
+78,New York,6
+78,North Carolina,115
+78,Pennsylvania,120
+78,South Carolina,82
+78,Virginia,286
+78,West Virginia,25
+79,Arizona,328
+79,California,186
+79,New Mexico,92
+79,Texas,574
+80,District of Columbia,20
+80,Georgia,81
+80,North Carolina,196
+80,South Carolina,90
+80,Virginia,196
+81,Alabama,65
+81,Arizona,383
+81,California,215
+81,Florida,479
+81,Louisiana,183
+81,Mississippi,78
+81,New Mexico,107
+81,Texas,782
+82,Connecticut,175
+82,Delaware,28
+82,District of Columbia,30
+82,Florida,175
+82,Georgia,37
+82,Maryland,111
+82,Massachusetts,142
+82,New Jersey,142
+82,New York,105
+82,North Carolina,118
+82,South Carolina,121
+82,Virginia,188
+83,District of Columbia,32
+83,Florida,245
+83,Georgia,53
+83,North Carolina,165
+83,South Carolina,169
+83,Virginia,265
+84,Connecticut,170
+84,Illinois,21
+84,Indiana,108
+84,Massachusetts,113
+84,New Jersey,1
+84,New York,90
+84,Ohio,140
+84,Pennsylvania,255
+85,New Jersey,58
+85,New York,5
+85,Pennsylvania,38
+86,Alabama,91
+86,Florida,482
+86,Louisiana,129
+86,Mississippi,275
+86,Texas,179
+87,District of Columbia,24
+87,Illinois,26
+87,Indiana,125
+87,Maryland,82
+87,Ohio,152
+87,Pennsylvania,223
+88,Connecticut,171
+88,Illinois,22
+88,Indiana,107
+88,Massachusetts,106
+88,New Jersey,1
+88,New York,87
+88,Ohio,135
+88,Pennsylvania,272
+89,Arkansas,159
+89,District of Columbia,19
+89,Tennessee,317
+89,Texas,136
+89,Virginia,520
+90,Illinois,25
+90,Indiana,124
+90,New Jersey,125
+90,New York,7
+90,Ohio,154
+90,Pennsylvania,279
+91,Arizona,234
+91,California,185
+91,Illinois,163
+91,Indiana,148
+91,Missouri,307
+91,New Mexico,219
+91,Ohio,207
+91,Oklahoma,235
+91,Pennsylvania,479
+91,Texas,123
+91,West Virginia,16
+92,Alabama,79
+92,Florida,522
+92,Louisiana,202
+92,Mississippi,86
+92,Texas,146
+93,Arizona,25
+93,California,152
+93,Colorado,535
+93,Illinois,136
+93,Iowa,237
+93,Nebraska,247
+93,Nevada,71
+93,Utah,291
+94,Georgia,120
+94,Illinois,29
+94,Indiana,226
+94,Kentucky,152
+94,Tennessee,117
+95,Arizona,22
+95,California,137
+95,Colorado,519
+95,Illinois,132
+95,Indiana,140
+95,Iowa,199
+95,Nebraska,212
+95,Nevada,62
+95,New Jersey,181
+95,New York,8
+95,Ohio,196
+95,Pennsylvania,311
+95,Utah,271
+96,Arkansas,231
+96,Illinois,374
+96,Missouri,47
+96,Texas,177
+97,Connecticut,170
+97,Illinois,21
+97,Indiana,108
+97,Massachusetts,113
+97,New Jersey,1
+97,New York,90
+97,Ohio,140
+97,Pennsylvania,255
+98,Arizona,238
+98,California,185
+98,Illinois,162
+98,Indiana,153
+98,Missouri,311
+98,New Mexico,218
+98,Ohio,200
+98,Oklahoma,239
+98,Pennsylvania,470
+98,Texas,123
+98,West Virginia,15
+99,Arizona,366
+99,California,200
+99,New Mexico,91
+99,Texas,600
