@@ -76,7 +76,7 @@ simulation_task/
 │       ├── state_minutes_choropleth.html
 │       └── state_avg_speed_choropleth.html
 ├── notebooks/
-│   └── simulation.ipynb        # Main simulation and analysis notebook
+│   └── simulation_valhalla.ipynb        # Main simulation and analysis notebook
 └── src/
     ├── __init__.py
     └── routing.py              # Valhalla/OSRM routing implementation
@@ -205,7 +205,7 @@ print("All packages installed successfully!")
    ```
 
 5. **Run simulation**
-   - Open `notebooks/simulation.ipynb`
+   - Open `notebooks/simulation_valhalla.ipynb`
    - Execute all cells to generate 100 truck trajectories
    - View generated visualizations and data
 
@@ -293,10 +293,6 @@ routing = TruckRouting(valhalla_url="http://localhost:8002", router_type="valhal
 3. Make your changes
 4. Add tests if applicable
 5. Submit a pull request
-
-## License
-
-This project is open source. Please check the license file for details.
 
 ## Troubleshooting
 
